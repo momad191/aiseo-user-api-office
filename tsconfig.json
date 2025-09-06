@@ -6,9 +6,8 @@
     "outDir": "dist",
     "rootDir": "src",
     "strict": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,       
-    "allowSyntheticDefaultImports": true,  
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },

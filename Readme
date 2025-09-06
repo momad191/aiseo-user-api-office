@@ -1,0 +1,49 @@
+### HOW to RUN files in your local 
+## After downloading the files, first run Redisin your local machine with the following command:
+# docker run -d --name redis -p 6379:6379 redis
+
+# Then write the commands
+pnpm install 
+pnpm dev
+
+
+#################### IN POSTMAN ############################
+# Send requests to the server to fetch user data Implement a GET /users/:id endpoint
+
+GET http://localhost:5000/users/1
+GET http://localhost:5000/users/2
+GET http://localhost:5000/users/3
+
+the result like:
+{
+    "fromCache": true, // if from Cache 
+    "user": {
+        "id": 1,
+        "name": "John Doe",
+        "email": "john@example.com"
+    }
+}
+
+
+# or
+{
+    "fromCache": false, // if not from Cache 
+    "user": {
+        "id": 1,
+        "name": "John Doe",
+        "email": "john@example.com"
+    }
+}
+
+# Send a request to the server to check the status Cache Status: Implement a GET /cache-status endpoint
+GET http://localhost:5000/cache-status
+
+
+# Send a request to the server to clear the Cache DELETE: Implement a DELETE /cache endpoint
+DELETE http://localhost:5000/cache
+
+
+
+# if you send to many requests the rateLimiter middeleware will prevent you form sending 
+#  it is a burst traffic handling. Allow 
+# a maximum of 10 requests per minute, with a burst capacity of 5 requests in a 10-second 
